@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("choosed_bag_container").style.display = "none";
     document.getElementById("random_bag_container").style.display = "none";
     document.getElementById("question").style.display = "none";
+    document.getElementById("confettiWrapper").style.display ="none";
 
     mainScreen.style.display = "none";
     nameCard.style.display = "block";
@@ -277,7 +278,7 @@ function showWinnerModal() {
   document.getElementById("random_bag_container").style.display = "none";
   document.getElementById("choosed_bag_container").style.display = "none";
   document.getElementById("question").style.display = "none";
-  document.getElementById("amount").innerHTML = `Balance:  R ${value}`;
+  document.getElementById("amount").innerHTML = `R ${value}`;
 }
 
 function hideWinnerModal() {
@@ -289,9 +290,10 @@ function handleSwitchChoice(choice) {
   if (choice === "yes") {
     userBags = randomBag;
     value = userBags.value;
-    document.getElementById("label").innerHTML = `Your bag : R ${value}`;
+    document.getElementById("label").innerHTML = `Balance : R ${value}`;
     musicPlayer.play();
     showWinnerModal();
+    document.getElementById("confettiWrapper").style.display ="block";
     confetti();
   } else {
     value = userBags[0].value;
@@ -299,6 +301,7 @@ function handleSwitchChoice(choice) {
     document.getElementById("label").innerHTML = `Your bag : R ${value}`;
     musicPlayer.play();
     showWinnerModal();
+    document.getElementById("confettiWrapper").style.display ="block";
     confetti();
   }
 }
@@ -313,8 +316,10 @@ function selectBag(event) {
       userBags.push(bagsAvailable[i]);
     }
   }
-  bagsAvailable.splice(id, 1);
-  randomBag = getRandomBag(bagsAvailable);
+
+  let remaningBags = bagsAvailable.filter((curr) => curr.id !== userBags[0].id);
+
+  randomBag = getRandomBag(remaningBags);
   document.getElementById("bagsContainer").style.display = "none";
   document.getElementById("selection_heading").style.display = "none";
   showModal();
@@ -337,4 +342,5 @@ function restartGame() {
   document.getElementById("question").style.display = "none";
   document.getElementById("name-card").style.display = "none";
   document.getElementById("switch_containers").style.display = "none";
+  document.getElementById("confettiWrapper").style.display ="none";
 }

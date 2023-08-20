@@ -10,12 +10,14 @@
 </head>
 
 <body>
-  <div class="container">
-    <div id="cloud-intro">
+  <home>
+  <video autoplay muted loop>
+    <source src="video/kids_-_26796 (1440p).mp4" type="video/mp4" />
+  </video>
       <div id="game">
         <div class="header">
           <h1 id="game-heading">Baggy Game</h1>
-          <div class="price__label" id="label" style="display: none">
+         
           </div>
         </div>
 
@@ -29,7 +31,9 @@
 
         <!--logged in screen  -->
         <div class="main-screen" id="main-screen" style="display: none">
+          
           <header>
+            <div class="price__label" id="label" style="display: none"></div>
             <div class="user-profile">
               <img src="images/avatar.svg" alt="Avatar">
               <span id="user-name"></span>
@@ -143,12 +147,12 @@
               <p id="amount"></p>
               <img src="images/icons8-winner-48.png" alt="Image" />
             </div>
-            <p>Do you want to restart game?</p>
+            <p class="restart_question">Do you want to restart game?</p>
             <button id="yesRestart">Restart</button>
           </div>
         </div>
-      </div>
-    </div>
+     
+    </home>
     <div id="confettiWrapper"></div>
 
 </body>
