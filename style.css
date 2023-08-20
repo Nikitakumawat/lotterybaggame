@@ -4,12 +4,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden; */
 }
 .home {
   height: 100vh;
   width: 100vw;
   position: relative;
+  min-width: 100%;
 }
 video {
   object-fit: cover;
@@ -526,6 +526,7 @@ video {
   transform: translate(-50%, 50%);
   display: flex;
   z-index: 999;
+  margin-bottom: 20px;
 }
 .question {
   display: none;
@@ -1099,6 +1100,37 @@ video {
 
 /* Extra large devices (large desktops, TVs) */
 @media (min-width: 1201px) and (max-width: 1259px) {
+  #bagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 999;
+    width: 125%;
+    margin-top: 20px;
+}
+.selected-bag {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  top: 107px;
+  left: 1px;
+  font-weight: bold;
+  z-index: 999;
+}
+  .selected-title {
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    top: 105px;
+    left: 2px;
+    z-index: 999;
+}
   .modal {
     display: none;
     position: absolute;
@@ -1148,6 +1180,31 @@ video {
     z-index: 999;
   }
 
+  .selected-bag {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    top: 102px;
+    left: -2px;
+    font-weight: bold;
+    z-index: 999;
+}
+.selected-title {
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  top: 105px;
+  left: 1px;
+  z-index: 999;
+}
+
   .modal-content {
     left: 37%;
     padding: 20px;
@@ -1155,7 +1212,7 @@ video {
     text-align: center;
     color: #fff;
     font-weight: bolder;
-    height: 444px;
+    height: 203px;
     font-size: 30px;
     width: 80%;
     z-index: 999;
