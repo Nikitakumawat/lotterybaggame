@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+  <title>The bag Lottery</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="cloud-intro">
+      <div id="game">
+        <div class="header">
+          <h1 id="game-heading">Baggy Game</h1>
+          <div class="price__label" id="label" style="display: none">
+          </div>
+        </div>
+
+        <!-- Login form -->
+        <div class="card" id="name-card">
+          <h2>Enter Your Gamer Name</h2>
+          <input type="text" id="gamer-name" placeholder="Your Name" required><br />
+          <small id="error" style="color: red"></small><br />
+          <button id="start-button">Start</button>
+        </div>
+
+        <!--logged in screen  -->
+        <div class="main-screen" id="main-screen" style="display: none">
+          <header>
+            <div class="user-profile">
+              <img src="images/avatar.svg" alt="Avatar">
+              <span id="user-name"></span>
+            </div>
+            <button id="logout-button">Logout</button>
+          </header>
+        </div>
+
+        <!-- winning audio -->
+        <audio id="winningMusic" src="./music/crowd-cheer-ii-6263.mp3" loop></audio>
+        <!-- bag selection audio -->
+        <audio id="selectionMusic" src="./music/game-start-6104.mp3"></audio>
+
+        <div class="baggy">
+          <h1 style="display: none" id="selection_heading">Select any one bag</h1>
+          <div class="bags__container" id="bagsContainer" style="display: none">
+
+            <div class="bag" id="Bag 1">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 1</div>
+            </div>
+            <div class="bag" id="Bag 2">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 2</div>
+            </div>
+            <div class="bag" id="Bag 3">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 3</div>
+            </div>
+            <div class="bag" id="Bag 4">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 4</div>
+            </div>
+            <div class="bag" id="Bag 5">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 5</div>
+            </div>
+            <div class="bag" id="Bag 6">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 6</div>
+            </div>
+            <div class="bag" id="Bag 7">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 7</div>
+            </div>
+            <div class="bag" id="Bag 8">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 8</div>
+            </div>
+            <div class="bag" id="Bag 9">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 9</div>
+            </div>
+            <div class="bag" id="Bag 10">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 10</div>
+            </div>
+            <div class="bag" id="Bag 11">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 11</div>
+            </div>
+            <div class="bag" id="Bag 12">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 12</div>
+            </div>
+            <div class="bag" id="Bag 13">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 13</div>
+            </div>
+            <div class="bag" id="Bag 14">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 14</div>
+            </div>
+            <div class="bag" id="Bag 15">
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 15</div>
+            </div>
+            <div class="bag" id='Bag 16'>
+              <img src="images/bag.svg" alt="Image" />
+              <div class="title">Bag 16</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="switch_containers" id="switch_containers" style="display: none;">
+          <!-- selected bag -->
+          <div class="choosed_bag_container" id="choosed_bag_container">
+            <img src="images/bag.svg" />
+            <p id="selected_bag" class="selected-bag"></p>
+            <div class="bag-type-label">Selected Bag</div>
+          </div>
+          <!-- random bag -->
+          <div class="random_bag_container" id="random_bag_container">
+            <img src="images/bag.svg" alt="Image" />
+            <div class="selected-title" id="random_bag"></div>
+            <div class="bag-type-label">Random Bag</div>
+            <div class="sunrays"></div>
+          </div>
+        </div>
+        <div class="question" id="question" style="display: none;">
+          <h2>Do you want to switch bags?</h2>
+          <button id="switchYes">Yes</button>
+          <button id="switchNo">No</button>
+        </div>
+
+        <!-- winning modal -->
+        <div id="winner_modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-text">
+              <p>Yay!! You Won </p>
+              <p id="amount"></p>
+              <img src="images/icons8-winner-48.png" alt="Image" />
+            </div>
+            <p>Do you want to restart game?</p>
+            <button id="yesRestart">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="confettiWrapper"></div>
+
+</body>
+<script src="./script.js"></script>
+
+
+</html>
